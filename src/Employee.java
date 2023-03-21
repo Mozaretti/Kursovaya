@@ -1,62 +1,38 @@
 public class Employee {
-    private static int idSchetchik = 0;
+    private String employeeName;
+    private double salary;
+    private int dept;
     private int id;
-    private String name;
-    private String surName;
-    private String lastName;
-    private int otdel;
-    private int salary;
+    public static int counter = 1;
 
-    public int getId() {
-        return id;
+    public Employee (String employeeName, int salary, int dept,int id) { // создали класс Employee
+        this.employeeName=employeeName;
+        this.salary=salary;
+        this.dept=dept;
+        this.id=counter++;
     }
 
-    public Employee(String name, String surName, String lastName, int otdel, int salary) {
-        this.id = idSchetchik++;
-        this.name = name;
-        this.surName = surName;
-        this.lastName = lastName;
-        this.otdel = otdel;
-        this.salary = salary;
+    public String getEmployeeName () { // геттер для имени
+        return this.employeeName;
+    }
+    public double getSalary () { // геттер для зарплаты
+        return this.salary;
+    }
+    public int getDept () { // геттер для номера отдела
+        return this.dept;
+    }
+    public int getId () { // геттер для ID сотрудника
+        return this.id;
+    }
+    public void setSalary (double salary) { // сеттер для зарплаты
+        this.salary=salary;
+    }
+    public void setDept (int dept) { // сеттер для отдела
+        this.dept=dept;
+    }
+    public String toString() { // вывод полной информации о сотруднике
+        return "ID работника - "+this.id+", Имя работника - "+this.employeeName+", Зарплата работника - "+this.salary;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSurName() {
-        return surName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getOtdel() {
-        return otdel;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setOtdel(int otdel) {
-        this.otdel = otdel;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", otdel=" + otdel +
-                ", salary=" + salary +
-                '}';
-    }
 }
+
